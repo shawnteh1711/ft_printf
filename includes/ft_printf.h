@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/07 09:55:36 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/07 14:22:47 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_print
 {
@@ -29,5 +31,8 @@ typedef struct s_print
     int perc;
     int spacef;
 }   t_print;
+
 int ft_printf(const char *s, ...);
+t_print	*ft_init_myprintf(t_print *myprintf);
+
 #endif

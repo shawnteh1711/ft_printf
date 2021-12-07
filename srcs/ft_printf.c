@@ -6,10 +6,10 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:15:25 by steh              #+#    #+#             */
-/*   Updated: 2021/12/07 11:08:31 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/07 14:34:37 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "ft_printf.h"
 
 int ft_printf(const char *s, ...)
 {
@@ -31,7 +31,8 @@ int ft_printf(const char *s, ...)
     while (s[i++])
     {
         if (s[i] == '%')
-            len = ft_eval_format(myprintf, s, i + 1);
+			break;
+/*len = ft_eval_format(myprintf, s, i + 1);*/
         else
             len = write(1, &s[i], 1);
     }

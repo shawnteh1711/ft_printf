@@ -6,10 +6,10 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 13:47:24 by steh              #+#    #+#             */
-/*   Updated: 2021/12/07 11:08:31 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/07 13:59:56 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "ft_printf.h"
 
 t_print *ft_init_myprintf(t_print *myprintf)
 {

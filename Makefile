@@ -6,33 +6,27 @@
 #    By: steh <steh@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/06 10:38:54 by steh              #+#    #+#              #
-#    Updated: 2021/12/06 10:51:42 by steh             ###   ########.fr        #
+#    Updated: 2021/12/07 14:27:48 by steh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME		:= libftprintf.a
 CC			:= gcc
-CP			:= cp
 AR			:= ar rcs
-CFLAGS		:= -Wall -Werror -Wextra
-INDIR		= includes/
-LIBFT		= libft/libft.a
-LIB_FILES	= $(wildcard *.c)
-HEADERS		= ft_printf.h
-
-OBJ_FILES	= $(LIB_FILES:%.c = %.o)
+CFLAGS		:= -Wall -Werror -Wextra -c
+SRCS		= srcs/ft*.c libft/ft*.c
+INCLUDES	= includes/
+OBJ_FILES	= $(SRCS:%.c = %.o)
 
 all			: $(NAME)
 
 $(NAME)		: $(OBJ_FILES)
-				make -C ./libftprintf
-				$(CP) $(LIBFT) $(NAME)
-				$(CC) -c $(HEADERS) $(LIB_FILES)
+				make -C ./libft
+				$(CC) $(CFLAGS) $(SRCS) -I $(INCLUDES)
 				$(AR) $(NAME) $(OBJ_FILES)
 clean:
 		@echo "Cleaning..."
-		rm -rf $(NAME) $(OBJ_FILES)
+		rm -rf $(NAME) ft*.o
 
 fclean:
 		rm -rf $(NAME)
