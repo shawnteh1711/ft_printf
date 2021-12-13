@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 09:26:03 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/13 20:04:46 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 int	ft_treat_str(t_print *myprintf)
 {
-	int		count;
+	int		i;
 	char	*tmp;
 	char	*str;
 
+	i = 0;
 	tmp = va_arg(myprintf->arg, char *);
+	printf("%s\n", tmp);
 	if (tmp == NULL)
+	{
 		tmp = "(null)";
-	if (myprintf->precision == 0)
-	{
-		str = ft_strnew(ft_strlen(tmp));
-		ft_strcpy(str, tmp);
+		printf("this is null");
 	}
-	else
+	if (tmp)
 	{
-		str = ft_strnew(myprintf->precision);
-		ft_strncpy(str, tmp, myprintf->precision);
+		while (tmp[i] != '\0')
+		{
+			ft_putchar(tmp[i++]);
+			printf("loop");
+		}
 	}
-	if (myprintf->point == 1)
-		count = 0;
-	else
-		count = ft_strlen(str);
-	return (count);
+	printf("end");
+	return (i);
 }

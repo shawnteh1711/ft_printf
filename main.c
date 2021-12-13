@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 09:04:30 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/13 20:21:07 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int	main(void)
 {
-	ft_printf("test\n");
-	ft_printf("%c\n", 'z');
+	//ft_printf("test\n");
+	//ft_printf("%c\n", 'z');
+	ft_printf("%s\n", "abce" );
+	//ft_printf("%s\n", "efg");
 	return (1);
 }

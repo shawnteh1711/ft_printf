@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:43:46 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 09:18:35 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/13 20:20:26 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,17 @@ int	ft_printf(const char *s, ...)
 	i = -1;
 	while (s[++i])
 	{
-		if (s[i] == '%')
+		if (s[i] == '%' && s[i + 1])
 			i = ft_eval_format(myprintf, s, i + 1);
 		else
+		{
+			printf("len");
 			len += write(1, &s[i], 1);
+		}
 	}
 	va_end(myprintf->arg);
 	len += myprintf->t_len;
 	free(myprintf);
+	printf("%d\n", len);
 	return (len);
 }
