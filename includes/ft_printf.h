@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/10 18:50:26 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/13 09:19:48 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "../libft/libft.h"
 
 typedef struct s_print
 {
@@ -33,6 +34,12 @@ typedef struct s_print
 }	t_print;
 
 int		ft_printf(const char *s, ...);
+int		ft_eval_format(t_print *myprintf, const char *s, int i);
 t_print	*ft_init_myprintf(t_print *myprintf);
-
+int		ft_treat_char(t_print *myprintf);
+int		ft_treat_str(t_print *myprintf);
+void	ft_treat_pointer(t_print *myprintf);
+void	ft_treat_int(t_print *myprintf);
+void	ft_treat_hexa(t_print *myprintf);
+void	ft_treat_percent(t_print *myprintf);
 #endif
