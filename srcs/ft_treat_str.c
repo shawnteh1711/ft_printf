@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 20:04:46 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/16 15:14:27 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,16 @@
 int	ft_treat_str(t_print *myprintf)
 {
 	int		i;
-	char	*tmp;
 	char	*str;
 
 	i = 0;
-	tmp = va_arg(myprintf->arg, char *);
-	printf("%s\n", tmp);
-	if (tmp == NULL)
+	str = va_arg(myprintf->arg, char *);
+	if (str == NULL)
 	{
-		tmp = "(null)";
-		printf("this is null");
+		str = "(null)";
+		return (0);
 	}
-	if (tmp)
-	{
-		while (tmp[i] != '\0')
-		{
-			ft_putchar(tmp[i++]);
-			printf("loop");
-		}
-	}
-	printf("end");
+	i = ft_strlen(str);
+	ft_putstr_fd(str, 1);
 	return (i);
 }

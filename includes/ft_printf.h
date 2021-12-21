@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 15:49:17 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/17 16:39:57 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,18 @@ typedef struct s_print
 }	t_print;
 
 int		ft_printf(const char *s, ...);
-int		ft_eval_format(t_print *myprintf, const char *s, int i);
+int		ft_count_output(t_print *myprint, const char *s);
+int		ft_eval_format(t_print *myprintf, const char c);
 t_print	*ft_init_myprintf(t_print *myprintf);
 int		ft_treat_char(t_print *myprintf);
 int		ft_treat_str(t_print *myprintf);
-void	ft_treat_pointer(t_print *myprintf);
-void	ft_treat_int(t_print *myprintf);
-void	ft_treat_hexa(t_print *myprintf);
-void	ft_treat_percent(t_print *myprintf);
+int		ft_treat_pointer(t_print *myprintf);
+int		ft_treat_int(t_print *myprintf);
+int		ft_treat_uint(t_print *myprintf);
+int		ft_treat_hexa(t_print *myprintf, const char c);
+int		ft_treat_percent(t_print *myprintf);
+int		ft_printstr(char *str);
+int		ft_uitoa(unsigned int n);
+void	ft_put_hex(unsigned int n, const char c);
+int		ft_hex_len(unsigned int n);
 #endif

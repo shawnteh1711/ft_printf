@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/13 09:09:21 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/17 16:35:27 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,27 +43,25 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 	return (i);
 }
 
-int	ft_eval_format(t_print *myprintf, const char *s, int i)
+int	ft_eval_format(t_print *myprintf, const char c)
 {
 	int	count;
 
 	count = 0;
 	//i = ft_flag_parse(myprintf, s, i);
-	if (s[i] == 'c')
+	if (c == 'c')
 		count = ft_treat_char(myprintf);
-	if (s[i] == 's')
+	if (c == 's')
 		count = ft_treat_str(myprintf);
-	if (s[i] == 'p')
-		ft_treat_pointer(myprintf);
-	if (s[i] == 'd' || s[i] == 'i')
-		ft_treat_int(myprintf);
-	if (s[i] == 'u')
-		ft_treat_int(myprintf);
-	if (s[i] == 'x')
-		ft_treat_hexa(myprintf);
-	if (s[i] == 'X')
-		ft_treat_hexa(myprintf);
-	if (s[i] == '%')
-		ft_treat_percent(myprintf);
+	if (c == 'p')
+		count = ft_treat_pointer(myprintf);
+	if (c == 'd' || c == 'i')
+		count = ft_treat_int(myprintf);
+	if (c == 'u')
+		count = ft_treat_uint(myprintf);
+	if (c == 'x' || c == 'X')
+		count = ft_treat_hexa(myprintf, c);
+	if (c == '%')
+		count = ft_treat_percent(myprintf);
 	return (count);
 }

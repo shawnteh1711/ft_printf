@@ -6,7 +6,7 @@
 #    By: steh <steh@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/06 10:38:54 by steh              #+#    #+#              #
-#    Updated: 2021/12/07 15:51:19 by steh             ###   ########.fr        #
+#    Updated: 2021/12/21 09:01:43 by steh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,16 +15,15 @@ CC			:= gcc
 AR			:= ar rcs
 CFLAGS		:= -Wall -Werror -Wextra -c
 SRCS		= srcs/ft*.c libft/ft*.c
-INCLUDES	= includes/
+INCLUDES	= ./includes
 OBJ_FILES	= $(SRCS:%.c = %.o)
 
-all			: $(NAME)
-
 $(NAME)		: $(OBJ_FILES)
-				make -C ./libft
+				$(MAKE) -C ./libft
 				$(CC) $(CFLAGS) $(SRCS) -I $(INCLUDES)
 				$(AR) $(NAME) $(OBJ_FILES)
 
+all			: $(NAME)
 
 test		: 
 				gcc main.c libft/ft*.c srcs/ft*.c -I ./includes

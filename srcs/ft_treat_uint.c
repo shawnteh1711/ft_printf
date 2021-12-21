@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_treat_int.c                                     :+:      :+:    :+:   */
+/*   ft_treat_uint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2021/12/15 14:13:44 by steh             ###   ########.fr       */
+/*   Created: 2021/12/15 14:57:16 by steh              #+#    #+#             */
+/*   Updated: 2021/12/16 17:59:35 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printstr(char *str)
+int	ft_treat_uint(t_print *myprintf)
 {
-	int	i;
+	int	n;
+	int	num;
 
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	num = 0;
+	n = va_arg(myprintf->arg, unsigned int);
+	num = ft_uitoa(n);
+	return (num);
 }
 
-int	ft_treat_int(t_print *myprintf)
+int	ft_uitoa(unsigned int n)
 {
-	int		len;
-	int		n;
-	char	*num;
+	char			str;
+	unsigned int	tmp;
+	size_t			t;
 
-	len = 0;
-	n = va_arg(myprintf->arg, int);
-	num = ft_itoa(n);
-	len = ft_printstr(num);
-	free(num);
-	return (len);
+	t = 0;
+	tmp = n;
+	while (tmp > 9)
+	{
+		tmp = tmp / 10;
+		t++;
+	}
+	if (n > 9)
+		ft_uitoa(n / 10);
+	str = n % 10 + 48;
+	write(1, &str, 1);
+	return (t + 1);
 }
