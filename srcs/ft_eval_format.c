@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_eval_format.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 10:38:20 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 17:38:34 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,47 +25,43 @@ int	flag_list(int c)
 		|| (c == '*'));
 }
 
-int	ft_flag_parse(t_print *myprintf, const char c)
+int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 {
-	int print_len;
-
-	while (c)
+	if (s[i] == '-')
 	{
-		if (c == '-')
-			*myprintf = ft_flag_minus(myprintf);
-		if (c == ' ')
-			myprintf->spacef = 1;
-		if (c == '0')
-			myprintf->zero = 1;
-		if (c == '.')
-			myprintf->precision = 1;
-		if (c == '*')
-			myprintf->t_len = 1;
+		*myprintf = ft_flag_minus(myprintf);
+		printf("%d2\n", myprintf->minus);
 	}
-	return (print_len);
+	if (s[i] == ' ')
+		myprintf->spacef = 1;
+	if (s[i] == '0')
+		myprintf->zero = 1;
+	if (s[i] == '.')
+		myprintf->precision = 1;
+	if (s[i] == '*')
+		myprintf->t_len = 1;
+	return (i);
 }
 
-int	ft_eval_format(t_print *myprintf, const char c)
+int	ft_eval_format(t_print *myprintf, const char *s, int i)
 {
 	int	count;
-	int	i;
 
 	count = 0;
-	i = 0;
-	i = ft_flag_parse(myprintf, c);
-	if (c == 'c')
+	if (s[i] == 'c')
 		count = ft_treat_char(myprintf);
-	if (c == 's')
+	if (s[i] == 's')
 		count = ft_treat_str(myprintf);
-	if (c == 'p')
+	if (s[i] == 'p')
 		count = ft_treat_pointer(myprintf);
-	if (c == 'd' || c == 'i')
+	if (s[i] == 'd' || s[i] == 'i')
 		count = ft_treat_int(myprintf);
-	if (c == 'u')
+	if (s[i] == 'u')
 		count = ft_treat_uint(myprintf);
-	if (c == 'x' || c == 'X')
-		count = ft_treat_hexa(myprintf, c);
-	if (c == '%')
+	if (s[i] == 'x' || s[i] == 'X')
+		count = ft_treat_hexa(myprintf, s[i]);
+	if (s[i] == '%')
 		count = ft_treat_percent(myprintf);
+	
 	return (count);
 }

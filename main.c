@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 10:33:58 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 15:43:22 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ int	main(void)
 
 	a = 1;
 	p = &a;
-	//ft_printf("%-123");
-	//ft_printf("%%-5.3s LYDI == |%-5.3s|", "LYDI");
+	ft_printf("%-c\n", 'a');
+	ft_printf("%c\n", 'q');
+	ft_printf("%%-5.3s LYDI == |%-5.3s|", "LYDI");
 	ft_printf("%s%s", "hi");
 	ft_printf("%s!", str);
 	ft_printf("test\n");
-	ft_printf("%c\n", 'z');
+	//ft_printf("%c\n", 'z');
 	ft_printf("%s\n", "abce");
 	ft_printf("%s\n", "abcdefg");
 	ft_printf("%d\n", 123);

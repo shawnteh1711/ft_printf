@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:43:46 by steh              #+#    #+#             */
-/*   Updated: 2021/12/16 16:07:57 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 16:06:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ int	ft_count_output(t_print *myprintf, const char *s)
 		if (s[i] == '%')
 		{
 			i++;
-			c += ft_eval_format(myprintf, s[i]);
+			if (flag_list(s[i]))
+				i = ft_flag_parse(myprintf, s, i);
+			c += ft_eval_format(myprintf, s, i);
 		}
 		else
 		{
