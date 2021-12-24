@@ -1,0 +1,23 @@
+# System files
+.DS_Store
+
+# Object files
+*.o
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.out
+
+# Temp files
+*.swp
+
+# Debug files
+*.dSYM/
+
+# Tester
+tests451/
+pft/
+ftprintfdestructor/

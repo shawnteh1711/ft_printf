@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_treat_str.c                                     :+:      :+:    :+:   */
+/*   ft_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2021/12/22 15:40:08 by steh             ###   ########.fr       */
+/*   Created: 2021/12/24 10:22:08 by steh              #+#    #+#             */
+/*   Updated: 2021/12/24 10:29:26 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_treat_str(t_print *myprintf)
+t_print	ft_flag_minus(t_print *myprintf)
 {
-	int		i;
-	char	*str;
-
-	i = 0;
-	str = va_arg(myprintf->arg, char *);
-	if (!str)
-		str = ("(null)");
-	i = ft_strlen(str);
-	ft_putstr_fd(str, 1);
-	return (i);
+	myprintf->minus = 1;
+	myprintf->zero = 0;
+	printf("minus flag");
+	return (*myprintf);
 }

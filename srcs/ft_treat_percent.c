@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:54:33 by steh              #+#    #+#             */
-/*   Updated: 2021/12/20 12:17:11 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 10:30:01 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_treat_percent(t_print *myprintf)
 {
 	write(1, "%", 1);
-	if (myprintf->dash == 0)
+	if (myprintf->minus == 0)
 		return (0);
 	return (1);
 }

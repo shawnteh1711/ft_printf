@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2021/12/17 15:43:35 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 10:33:58 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ int	main(void)
 {
 	int	a;
 	int *p;
+	char *str = NULL;
 
 	a = 1;
 	p = &a;
+	//ft_printf("%-123");
+	//ft_printf("%%-5.3s LYDI == |%-5.3s|", "LYDI");
+	ft_printf("%s%s", "hi");
+	ft_printf("%s!", str);
 	ft_printf("test\n");
 	ft_printf("%c\n", 'z');
 	ft_printf("%s\n", "abce");

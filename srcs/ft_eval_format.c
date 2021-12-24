@@ -6,7 +6,7 @@
 /*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/17 16:35:27 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 10:38:20 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,34 @@ int	flag_list(int c)
 		|| (c == '*'));
 }
 
-int	ft_flag_parse(t_print *myprintf, const char *s, int i)
+int	ft_flag_parse(t_print *myprintf, const char c)
 {
-	while (s[i])
+	int print_len;
+
+	while (c)
 	{
-		if (s[i] == '-')
-			myprintf->dash = 1;
-		if (s[i] == ' ')
+		if (c == '-')
+			*myprintf = ft_flag_minus(myprintf);
+		if (c == ' ')
 			myprintf->spacef = 1;
-		if (s[i] == '0')
-			myprintf->dash = 1;
-		if (s[i] == '.')
-			myprintf->point = 1;
-		if (s[i] == '*')
+		if (c == '0')
+			myprintf->zero = 1;
+		if (c == '.')
+			myprintf->precision = 1;
+		if (c == '*')
 			myprintf->t_len = 1;
 	}
-	return (i);
+	return (print_len);
 }
 
 int	ft_eval_format(t_print *myprintf, const char c)
 {
 	int	count;
+	int	i;
 
 	count = 0;
-	//i = ft_flag_parse(myprintf, s, i);
+	i = 0;
+	i = ft_flag_parse(myprintf, c);
 	if (c == 'c')
 		count = ft_treat_char(myprintf);
 	if (c == 's')

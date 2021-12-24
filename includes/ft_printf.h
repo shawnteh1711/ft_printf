@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/17 16:39:57 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/24 10:26:32 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_print
 	int		precision;
 	int		zero;
 	int		point;
-	int		dash;
+	int		minus;
 	int		t_len;
 	int		sign;
 	int		is_zero;
@@ -49,4 +49,5 @@ int		ft_printstr(char *str);
 int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
+t_print	ft_flag_minus(t_print *myprintf);
 #endif
