@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 15:31:55 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/27 16:29:32 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ int		ft_treat_pointer(t_print *myprintf);
 int		ft_treat_int(t_print *myprintf);
 int		ft_treat_uint(t_print *myprintf);
 int		ft_treat_hexa(t_print *myprintf, const char c);
-int		ft_treat_percent(t_print *myprintf);
+int		ft_treat_percent(void);
 int		ft_printstr(char *str);
 int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
-int		ft_width(t_print *myprintf);
+int		ft_width(t_print *myprintf, int minus);
 t_print	ft_flag_minus(t_print *myprintf);
+t_print ft_flag_digit(char c, t_print *myprintf);
 int		conversion_list(int c);
 int		flag_list(int c);
 

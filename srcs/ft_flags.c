@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:22:08 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 16:06:36 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/27 10:45:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ t_print	ft_flag_minus(t_print *myprintf)
 {
 	myprintf->minus = 1;
 	myprintf->zero = 0;
-	printf("%d\n", myprintf->minus);
-	printf("minus flag");
+	return (*myprintf);
+}
+
+t_print ft_flag_digit(char c, t_print *myprintf)
+{
+	myprintf->width = ft_atoi(&c);
 	return (*myprintf);
 }

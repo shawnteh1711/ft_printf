@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 19:05:31 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 14:49:02 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/27 16:30:20 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,9 @@ int	ft_treat_char(t_print *myprintf)
 	count = 0;
 	c = va_arg(myprintf->arg, int);
 	if (myprintf->minus == 1)
-	{
-		printf("aaa");
 		ft_putchar(c);
-		count = ft_width(myprintf);
-	}
-	if (myprintf->minus != 1)
+	count = ft_width(myprintf, myprintf->minus);
+	if (myprintf->minus == 0)
 		ft_putchar(c);
-		printf("bbb");
 	return (count + 1);
 }

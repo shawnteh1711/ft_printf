@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:43:46 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 16:06:52 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/27 16:04:28 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_printf(const char *s, ...)
 	return (len);
 }
 
+// go through each flag and format process
 int	ft_count_output(t_print *myprintf, const char *s)
 {
 	int	i;
@@ -39,21 +40,20 @@ int	ft_count_output(t_print *myprintf, const char *s)
 	c = 0;
 	while (s[i])
 	{
-		if (s[i] == '%')
+		if (!s[i])
+			break;
+		if (s[i] == '%' && s[i + 1])
 		{
-			i++;
-			if (flag_list(s[i]))
-				i = ft_flag_parse(myprintf, s, i);
-			c += ft_eval_format(myprintf, s, i);
+			i = ft_flag_parse(myprintf, s, ++i);
+			if (conversion_list(s[i]))
+				c += ft_eval_format(myprintf, s, i);
 		}
 		else
 		{
 			ft_putchar_fd(s[i], 1);
 			c++;
 		}
-		i++;
-		if (!s[i])
-			return (c);
+		i++;	
 	}
 	return (c);
 }

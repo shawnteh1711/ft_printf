@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_treat_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:54:33 by steh              #+#    #+#             */
-/*   Updated: 2021/12/24 10:30:01 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/27 12:44:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_treat_percent(t_print *myprintf)
+int	ft_treat_percent(void)
 {
 	write(1, "%", 1);
-	if (myprintf->minus == 0)
-		return (0);
 	return (1);
 }
