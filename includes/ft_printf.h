@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/27 16:29:32 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/28 17:28:20 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,12 @@ int		ft_printstr(char *str);
 int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
-int		ft_width(t_print *myprintf, int minus);
+int		ft_width(t_print *myprintf, int minus, int zero);
 t_print	ft_flag_minus(t_print *myprintf);
 t_print ft_flag_digit(char c, t_print *myprintf);
 int		conversion_list(int c);
 int		flag_list(int c);
+long	ft_strltol(const char *p, const char **end, int base);
 
 
 #endif

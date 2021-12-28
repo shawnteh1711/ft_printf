@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:22:08 by steh              #+#    #+#             */
-/*   Updated: 2021/12/27 10:45:52 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/28 17:25:45 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ t_print	ft_flag_minus(t_print *myprintf)
 	return (*myprintf);
 }
 
-t_print ft_flag_digit(char c, t_print *myprintf)
+t_print	ft_flag_digit(char c, t_print *myprintf)
 {
-	myprintf->width = ft_atoi(&c);
+	myprintf->width = 0;
+	myprintf->width = myprintf->width * 10 + (c - '0');
 	return (*myprintf);
 }
