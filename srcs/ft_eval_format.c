@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/28 19:48:24 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/29 11:52:14 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	flag_list(int c)
 
 int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 {
-	// const char	*end;
-
 	while (s[i])
 	{
 		if (s[i] == '-')
@@ -42,11 +40,10 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		if (s[i] == '*')
 			myprintf->t_len = 1;
 		if (ft_isdigit(s[i]))
-			*myprintf = ft_flag_digit(s[i], myprintf);
-		// if (ft_isdigit((unsigned char)s[i]))
-		// 	myprintf->width = ft_atoi(s + i);
-		// 	i++;
-		// 	break ;
+		{
+			*myprintf = ft_flag_digit2(&s[i], myprintf);
+			i = myprintf->end - s;
+		}
 		if (conversion_list(s[i]))
 			break ;
 		i++;
