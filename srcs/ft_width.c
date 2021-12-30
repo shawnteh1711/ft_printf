@@ -6,24 +6,24 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 14:22:40 by steh              #+#    #+#             */
-/*   Updated: 2021/12/29 10:06:36 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/30 19:12:01 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_width(t_print *myprintf, int minus, int zero)
+int	ft_width(int width, int minus, int zero)
 {
 	int	count;
 
 	count = 0;
-	while (myprintf->width - minus > 0)
+	while (width - minus > 0)
 	{
 		if (zero)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');
-		myprintf->width--;
+		width--;
 		count++;
 	}
 	return (count);

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2021/12/29 15:59:09 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/30 19:12:51 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_print
 	int		t_len;
 	int		sign;
 	int		is_zero;
-	int		perc;
+	int		star;
 	int		spacef;
 	const char	*end;
 }	t_print;
@@ -51,7 +51,7 @@ int		ft_printstr(char *str);
 int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
-int		ft_width(t_print *myprintf, int minus, int zero);
+int		ft_width(int width, int minus, int zero);
 t_print	ft_flag_minus(t_print *myprintf);
 t_print ft_flag_digit(char c, t_print *myprintf);
 int		conversion_list(int c);
@@ -59,6 +59,9 @@ int		flag_list(int c);
 long	ft_strltol(const char *p, const char **end, int base);
 t_print	ft_flag_digit2(const char *c, t_print *myprintf);
 void	ft_treat_left_align(char *str, int i);
+t_print	ft_flag_dot(const char *c, int i, t_print *myprintf);
+
+
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2021/12/29 16:23:39 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/30 19:38:57 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,36 @@ int	ft_treat_str(t_print *myprintf)
 	{
 		if (myprintf-> minus == 0)
 		{
-			i += ft_width(myprintf, ft_strlen(str), 0);
+			i += ft_width(myprintf->width, ft_strlen(str), 0);
 			ft_putstr_fd(str, 1);
 		}
 		else
 		{
 			ft_treat_left_align(str, i);
-			i += ft_width(myprintf, ft_strlen(str), 0);
+			i += ft_width(myprintf->width, ft_strlen(str), 0);
 		}
 	}
 	else
 	{
 		ft_putstr_fd(str, 1);
 	}
-	
+
+	if (myprintf->precision > 0 && myprintf->precision > (int)ft_strlen(str))
+	{
+		myprintf->precision = ft_strlen(str);
+		// printf("width: %d\n", myprintf->width);
+		// printf("precision: %d\n", myprintf->precision);
+		i += ft_width(myprintf->width, ft_strlen(str), 0);
+
+	}
+	else if ((myprintf->precision > 0 && myprintf->precision < (int)ft_strlen(str)))
+	{
+		// printf("width2: %d\n", myprintf->width);
+		// printf("precision2: %d\n", myprintf->precision);
+		// i += ft_width(myprintf->width, myprintf->precision, 0);
+		ft_treat_left_align(str, myprintf->precision);
+
+	}
 	return (i);
 }
 

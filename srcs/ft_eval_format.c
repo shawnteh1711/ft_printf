@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/29 11:52:14 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/30 19:04:57 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		if (s[i] == '0')
 			myprintf->zero = 1;
 		if (s[i] == '.')
-			myprintf->precision = 1;
+		{
+			*myprintf = ft_flag_dot(s, i, myprintf);
+			i = myprintf->end - s;
+		}
 		if (s[i] == '*')
-			myprintf->t_len = 1;
+			myprintf->star = 1;
 		if (ft_isdigit(s[i]))
 		{
 			*myprintf = ft_flag_digit2(&s[i], myprintf);
