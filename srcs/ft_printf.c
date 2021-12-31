@@ -6,11 +6,11 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 18:43:46 by steh              #+#    #+#             */
-/*   Updated: 2021/12/29 11:49:35 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/31 12:22:23 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 /* loop through s, if find %, go through format else just print character */
 int	ft_printf(const char *s, ...)

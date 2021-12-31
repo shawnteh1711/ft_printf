@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/30 19:04:57 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/31 12:56:59 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 {
 	while (s[i])
 	{
+		if (ft_isdigit(s[i]))
+		{
+			*myprintf = ft_flag_digit2(s, i, myprintf);
+			i = myprintf->end - s;
+		}
 		if (s[i] == '-')
 			*myprintf = ft_flag_minus(myprintf);
 		if (s[i] == ' ')
@@ -36,27 +41,23 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		if (s[i] == '0')
 			myprintf->zero = 1;
 		if (s[i] == '.')
-		{
-			*myprintf = ft_flag_dot(s, i, myprintf);
-			i = myprintf->end - s;
-		}
+			*myprintf = ft_flag_dot(s, ++i, myprintf);
 		if (s[i] == '*')
 			myprintf->star = 1;
-		if (ft_isdigit(s[i]))
-		{
-			*myprintf = ft_flag_digit2(&s[i], myprintf);
-			i = myprintf->end - s;
-		}
 		if (conversion_list(s[i]))
 			break ;
 		i++;
 	}
+	// printf("width: %d\n", myprintf->width);
+
 	return (i);
 }
 
 int	ft_eval_format(t_print *myprintf, const char *s, int i)
 {
 	int	count;
+
+	// printf("width: %d\n", myprintf->width);
 
 	count = 0;
 	if (s[i] == 'c')

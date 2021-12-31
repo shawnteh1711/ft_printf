@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2021/12/30 19:27:01 by steh             ###   ########.fr       */
+/*   Updated: 2021/12/31 16:24:19 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ int	main(void)
 	//ft_printf("%-1c %-2c %-3c", 0, '1', '2');
 	//ft_printf("%1s", "hello");
 	//ft_printf("%123s", "hello");
-	ft_printf("<%-10s>", "hello");
-	ft_printf("<%10s>", "hello");
-	ft_printf("%.3s", "hello");
-	ft_printf("%.19s", "hello");
-	ft_printf("%.192s", "hello");
+	//ft_printf("<%-10s>", "hello");
+	//ft_printf("<%10s>", "hello");
+	ft_printf("%s\n", "hello");
+	ft_printf("%110.3s", "hello");
+	// ft_printf("%2.3s", "hello");
+	//ft_printf("%.19s", "hello");
+	//ft_printf("%.192s", "hello");
 	//ft_printf("%d\n", 42);
 	//ft_printf("%i\n", 42);
 	//ft_printf("|%5c|\n", '\0');
