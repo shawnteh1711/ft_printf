@@ -44,7 +44,8 @@ t_print	ft_flag_dot(const char *c, int i, t_print *myprintf)
 	const char	*end;
 
 	end = "";
-	if (ft_isdigit(c[i]))
+	// printf("c[i]=%c\n", c[i]);
+	if (ft_isdigit(c[i]) || c[i] == 's')
 	{
 		myprintf->precision = 0;
 		myprintf->precision = ft_strltol(&c[i++], &end, 10);

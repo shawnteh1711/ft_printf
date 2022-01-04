@@ -49,6 +49,7 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		i++;
 	}
 	// printf("width: %d\n", myprintf->width);
+	printf("precision: %d\n", myprintf->precision);
 
 	return (i);
 }
