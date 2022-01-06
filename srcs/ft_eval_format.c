@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2021/12/31 12:56:59 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/06 16:22:17 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		if (s[i] == '0')
 			myprintf->zero = 1;
 		if (s[i] == '.')
+		{
 			*myprintf = ft_flag_dot(s, ++i, myprintf);
+			i = myprintf->end - s;
+		}
+
 		if (s[i] == '*')
 			myprintf->star = 1;
 		if (conversion_list(s[i]))
@@ -49,7 +53,7 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		i++;
 	}
 	// printf("width: %d\n", myprintf->width);
-	printf("precision: %d\n", myprintf->precision);
+	// printf("precision: %d\n", myprintf->precision);
 
 	return (i);
 }

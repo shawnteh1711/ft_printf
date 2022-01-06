@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2022/01/04 16:01:17 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/06 16:19:36 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,28 @@ int	ft_treat_str(t_print *myprintf)
 		myprintf->precision = ft_strlen(str);
 	if (myprintf->minus == 1)
 	{
+		// printf("a");
 		i += ft_treat_part_str(str, myprintf);
 		// printf("i=%d\n", i);
 
 	}
 	if (myprintf->precision >= 0)
+	{
 		i += ft_width(myprintf->width, myprintf->precision, 0);
+		// printf("b");
+	}
 	else
+	{
 		i += ft_width(myprintf->width, ft_strlen(str), 0);
+		// printf("c");
+
+	}
 		// i += ft_width(myprintf->width, ft_strlen(str), 0);
 	if (myprintf->minus == 0)
 	{
 		// printf("no minus");
+		// printf("d");
+
 		i += ft_treat_part_str(str, myprintf);
 
 	}
