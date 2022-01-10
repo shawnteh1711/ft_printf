@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2022/01/10 16:53:19 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 19:12:29 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,17 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 			*myprintf = ft_flag_digit2(s, i, myprintf);
 			i = myprintf->end - s;
 		}
+		if (s[i] == '.')
+		{
+			*myprintf = ft_flag_dot(s, ++i, myprintf);
+			i = myprintf->end - s;
+		}
 		if (s[i] == '-')
 			*myprintf = ft_flag_minus(myprintf);
 		if (s[i] == ' ')
 			myprintf->spacef = 1;
 		if (s[i] == '0')
 			myprintf->zero = 1;
-		if (s[i] == '.')
-		{
-			*myprintf = ft_flag_dot(s, ++i, myprintf);
-			i = myprintf->end - s;
-		}
-
 		if (s[i] == '*')
 			*myprintf = ft_flag_star(myprintf);
 		if (conversion_list(s[i]))

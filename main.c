@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2022/01/10 16:57:59 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 18:51:47 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	a = 1;
 	p = &a;
 	
-	//ft_printf("%-1c %-2c %-3c", '0', 0, '1');
+	//ft_printf("%-1c %-2c 	%-3c", '0', 0, '1');
 	//ft_printf("%-1c %-2c %-3c", '2', '1', 0);
 	//ft_printf("%-1c %-2c %-3c", 0, '1', '2');
 	//ft_printf("%1s", "hello");
@@ -32,6 +32,7 @@ int	main(void)
 	// ft_printf("%s\n", "hello");
 	//ft_printf("%110.3s", "hello");
 	// ft_printf("%5s", "goes over");
+	// ft_printf("%.s", 0);
 	ft_printf("%.*s", -3, 0);
 	ft_printf("%.*s", -1, 0);
 	// ft_printf("%.5s%7s", "|yo|", "<boi>");

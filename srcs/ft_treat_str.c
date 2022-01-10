@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2022/01/10 10:28:16 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 19:08:53 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_treat_str(t_print *myprintf)
 
 	i = 0;
 	str = va_arg(myprintf->arg, char *);
+	printf("%s\n", str);
 	if (!str)
 		str = ("(null)");
 	// printf("width: %d\n", myprintf->width);
