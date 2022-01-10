@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2022/01/06 16:19:36 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 10:28:16 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,13 @@ int	ft_treat_part_str(char *str, t_print *myprintf)
 	// printf("width: %d\n", myprintf->width);
 	if (myprintf->precision >= 0)
 	{
+		// printf("e");
 		c += ft_width(myprintf->precision, ft_strlen(str), 0);
 		c += ft_treat_left_align(str, myprintf->precision);
 	}
 	else
 	{
+		// printf("f");
 		// printf("no precision");
 		// c += ft_treat_left_align(str, myprintf->width);
 		c += ft_treat_left_align(str, ft_strlen(str));

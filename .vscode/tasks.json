@@ -5,15 +5,15 @@
 	"tasks": [
 	  {
 		"type": "shell",
-		"label": "clang++ build active file",
+		"label": "clang build active file",
 		"command": "/usr/bin/clang++",
 		"args": [
 		  "-std=c++17",
 		  "-stdlib=libc++",
 		  "-g",
-		  "srcs/ft_printf.c",
+		  "${file}",
 		  "-o",
-		  "${fileDirname}/${fileBasenameNoExtension}"
+		  "${fileDirname}/${fileBasenameNoExtension}",
 		],
 		"options": {
 		  "cwd": "${workspaceFolder}"

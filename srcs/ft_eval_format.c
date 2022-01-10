@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2022/01/06 16:22:17 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 16:53:19 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		}
 
 		if (s[i] == '*')
-			myprintf->star = 1;
+			*myprintf = ft_flag_star(myprintf);
 		if (conversion_list(s[i]))
 			break ;
 		i++;

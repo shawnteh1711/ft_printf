@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 13:47:24 by steh              #+#    #+#             */
-/*   Updated: 2022/01/04 14:22:47 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/10 17:04:24 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ t_print	*ft_init_myprintf(t_print *myprintf)
 	myprintf->is_zero = 0;
 	myprintf->precision = -1;
 	myprintf->spacef = 0;
+	myprintf->star = 0; 
 	return (myprintf);
 }
