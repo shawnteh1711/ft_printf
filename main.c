@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2022/01/10 18:51:47 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/21 15:00:55 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ int	main(void)
 	//ft_printf("%110.3s", "hello");
 	// ft_printf("%5s", "goes over");
 	// ft_printf("%.s", 0);
-	ft_printf("%.*s", -3, 0);
-	ft_printf("%.*s", -1, 0);
+	// ft_printf("%.*s", -3, 0);
+	// ft_printf("%.*s", -1, 0);
+	// ft_printf("%s", "String");
 	// ft_printf("%.5s%7s", "|yo|", "<boi>");
 	// ft_printf("%.5s", "<boi>");
 	// ft_printf("%.09s", "hello");
@@ -59,11 +60,11 @@ int	main(void)
 	// ft_printf("%s\n", "abce");
 	// ft_printf("%s\n", "abcdefg");
 	// ft_printf("%d\n", 123);
-	// ft_printf("%p\n", p);
+	ft_printf("%p\n", p);
 	// ft_printf("%%asd\n");
 	// ft_printf("%u\n", 26);
 	// ft_printf("%u\n", -26);
 	// ft_printf("%x\n", 23123);
 	// ft_printf("%X\n", 23423);
-	return (1);
+	return (0);
 }

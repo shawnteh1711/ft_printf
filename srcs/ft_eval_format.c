@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2022/01/10 19:12:29 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/21 15:23:50 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,12 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 			break ;
 		i++;
 	}
-	// printf("width: %d\n", myprintf->width);
-	// printf("precision: %d\n", myprintf->precision);
-
 	return (i);
 }
 
 int	ft_eval_format(t_print *myprintf, const char *s, int i)
 {
 	int	count;
-
-	// printf("width: %d\n", myprintf->width);
 
 	count = 0;
 	if (s[i] == 'c')
