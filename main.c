@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 14:35:44 by steh              #+#    #+#             */
-/*   Updated: 2022/01/21 15:00:55 by steh             ###   ########.fr       */
+/*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
+/*   Updated: 2022/01/24 16:44:45 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	main(void)
@@ -22,6 +22,11 @@ int	main(void)
 	a = 1;
 	p = &a;
 	
+	// char *pointer;
+    
+    // pointer = convert(11, 8);
+    // printf("%s", pointer);
+	ft_printf("%p\n", p);
 	//ft_printf("%-1c %-2c 	%-3c", '0', 0, '1');
 	//ft_printf("%-1c %-2c %-3c", '2', '1', 0);
 	//ft_printf("%-1c %-2c %-3c", 0, '1', '2');
@@ -60,7 +65,6 @@ int	main(void)
 	// ft_printf("%s\n", "abce");
 	// ft_printf("%s\n", "abcdefg");
 	// ft_printf("%d\n", 123);
-	ft_printf("%p\n", p);
 	// ft_printf("%%asd\n");
 	// ft_printf("%u\n", 26);
 	// ft_printf("%u\n", -26);
