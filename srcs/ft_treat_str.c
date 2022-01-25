@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:51:09 by steh              #+#    #+#             */
-/*   Updated: 2022/01/21 15:20:45 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/25 08:26:02 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,6 @@ int	ft_treat_str(t_print *myprintf)
 	if (myprintf->minus == 0)
 		i += ft_treat_part_str(str, myprintf);
 	return (i);
-}
-
-int	ft_treat_left_align(char *str, int i)
-{
-	int	c;
-
-	c = 0;
-	while (str[c] && c < i)
-		ft_putchar(str[c++]);
-	return (c);
 }
 
 int	ft_treat_part_str(char *str, t_print *myprintf)

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/01/24 16:44:45 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/25 18:16:39 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ int	main(void)
     
     // pointer = convert(11, 8);
     // printf("%s", pointer);
+	// ft_printf("%5p\n", p);
+	// ft_printf("%5%\n", p);
 	ft_printf("%p\n", p);
+	ft_printf("%p", NULL);
+	// ft_printf("%5p", NULL);
 	//ft_printf("%-1c %-2c 	%-3c", '0', 0, '1');
 	//ft_printf("%-1c %-2c %-3c", '2', '1', 0);
 	//ft_printf("%-1c %-2c %-3c", 0, '1', '2');

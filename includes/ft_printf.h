@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/01/24 16:35:30 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/25 11:23:41 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,8 @@ t_print	ft_flag_dot(const char *c, int i, t_print *myprintf);
 int		ft_treat_part_str(char *str, t_print *myprintf);
 t_print	ft_flag_star(t_print *myprintf);
 char	*convert(unsigned int num, int base);
+char	*ft_pointer_tolower(char *point);
+int		ft_treat_part_pointer(char *point, t_print *myprintf);
+
 
 #endif
