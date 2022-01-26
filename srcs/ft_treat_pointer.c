@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:52:44 by steh              #+#    #+#             */
-/*   Updated: 2022/01/25 18:17:56 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/26 19:10:34 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_put_ptr(unsigned long long ptr)
 {
 	if (ptr >= 16)
 	{
+		// printf("POINTER: %llu\n", ptr);
 		ft_put_ptr(ptr / 16);
 		ft_put_ptr(ptr % 16);
 	}
@@ -47,20 +48,40 @@ void	ft_put_ptr(unsigned long long ptr)
 	}
 }
 
+// char	*ft_put_ptr(unsigned long long ptr)
+// {
+// 	if (ptr >= 16)
+// 	{
+// 		ft_put_ptr(ptr / 16);
+// 		ft_put_ptr(ptr % 16);
+// 	}
+// 	else
+// 	{
+// 		if (ptr <= 9)
+// 			ft_putchar_fd((ptr + '0'), 1);
+// 		else
+// 			ft_putchar_fd((ptr - 10 + 'a'), 1);
+// 	}
+// 	return ((char *)ptr);
+// }
+
 int	ft_treat_pointer(t_print *myprintf)
 {
 	int					count;
 	unsigned long long	pointer;
 	char				*point;
-	char				*point2;
 
 	count = 0;
 	// count += write(1, "0x", 2);
-	pointer = (unsigned long long)va_arg(myprintf->arg, void *);
+	pointer = va_arg(myprintf->arg, unsigned long long);
+	// printf("POINTER: %llu\n", pointer);
+	ft_put_ptr(pointer);
 	if (pointer == 0 && myprintf->precision == 0)
 	{
 		count += ft_treat_left_align("0x", 2);
+		// printf("width: %d\n", myprintf->width);
 		return (count += ft_width(myprintf->width, 0, 1));
+
 	}
 	// if (!pointer)
 	// {
@@ -68,31 +89,30 @@ int	ft_treat_pointer(t_print *myprintf)
 	// 	printf("width: %d\n", myprintf->width);
 	// }
 	point = convert(pointer, 16);
-	point2 = point;
 	point = ft_pointer_tolower(point);
-	if ((size_t)myprintf->precision < ft_strlen(point2))
+	// point = ft_put_ptr(pointer);
+	// count += ft_ptr_len(pointer);
+	if ((size_t)myprintf->precision < ft_strlen(point))
 	{
 		// printf("A");
-		myprintf->precision = ft_strlen(point2);
+		myprintf->precision = ft_strlen(point);
 		// printf("pointer: %s\n", point2);
 		// printf("precision: %d\n", myprintf->precision);
 	}
 	if (myprintf->minus == 1)
 	{
 		// printf("B");
-		count += ft_treat_part_pointer(point2, myprintf); 
+		count += ft_treat_part_pointer(point, myprintf); 
 	}
-	count += ft_width(myprintf->width, ft_strlen(point2) + 2, 0);
+	count += ft_width(myprintf->width, ft_strlen(point) + 2, 0);
 	if (myprintf->minus == 0)
 	{
 		// printf("C");
 		// printf("width: %d\n", myprintf->width);
-		count += ft_treat_part_pointer(point2, myprintf);
+		count += ft_treat_part_pointer(point, myprintf);
 	}
 	// printf("pointer: %s\n", point2);
 	// free(point2);
-
-
 	// if (pointer == 0)
 	// 	count += write(1, "0", 1);
 	// else
@@ -105,10 +125,13 @@ int	ft_treat_pointer(t_print *myprintf)
 
 char	*ft_pointer_tolower(char *point)
 {
-	while (*point)
+	int	i;
+
+	i = 0;
+	while (point[i])
 	{
-		*point = ft_tolower(*point);
-		point++;
+		point[i] = ft_tolower(point[i]);
+		i++;
 	}
 	return (point);
 }
