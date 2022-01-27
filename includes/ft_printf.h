@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/01/25 11:23:41 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/27 15:07:37 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <stdarg.h>
 # include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include "../libft/libft.h"
 
 typedef struct s_print
@@ -65,6 +63,9 @@ t_print	ft_flag_star(t_print *myprintf);
 char	*convert(unsigned int num, int base);
 char	*ft_pointer_tolower(char *point);
 int		ft_treat_part_pointer(char *point, t_print *myprintf);
+char	*convert_base(unsigned long long num, int base);
+int		ft_ptr_len(unsigned long long ptr);
+
 
 
 #endif

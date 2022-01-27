@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:22:08 by steh              #+#    #+#             */
-/*   Updated: 2022/01/21 15:22:19 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/27 12:02:50 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_print	ft_flag_dot(const char *c, int i, t_print *myprintf)
 	else
 	{
 		myprintf->precision = 0;
-		if (ft_isdigit(c[i]) || c[i] == 's')
+		if (ft_isdigit(c[i]) || ft_strchr("cspiuxXd", c[i]))
 		{
 			myprintf->precision = ft_strltol(&c[i++], &end, 10);
 			myprintf->end = end;

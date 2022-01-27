@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:16:32 by steh              #+#    #+#             */
-/*   Updated: 2022/01/26 19:04:09 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/27 15:45:00 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*convert(unsigned int num, int base)
 		// printf("rep: %s[%d]\n", representation, num % base);
 		// printf("ptr: %s\n", ptr);
 		num /= base;
-		// printf("num2: %d\n", num);
+		// printf("ptr:%s\n", ptr);
 	}
 	// do
 	// {
@@ -38,5 +38,28 @@ char	*convert(unsigned int num, int base)
 		// printf("num: %d\n", num);
 	// } while (num != 0);
 	// printf("ptr:%s", ptr);
+	return (ptr);
+}
+
+char	*convert_base(unsigned long long num, int base)
+{
+	long		quotient;
+	long		remain;
+	char 		*ptr;
+	static char	buffer[100];
+
+	// printf("num: %llu\n", num);
+	quotient = num;
+	ptr = &buffer[99];
+	*ptr = '\0';
+	while (quotient != 0)
+	{
+		remain = quotient % base;
+		if (remain < 10)
+			*--ptr = remain + 48;
+		else
+			*--ptr = remain + 55;
+		quotient /= base;
+	}
 	return (ptr);
 }
