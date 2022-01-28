@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:52:44 by steh              #+#    #+#             */
-/*   Updated: 2022/01/27 19:05:17 by steh             ###   ########.fr       */
+/*   Updated: 2022/01/28 18:44:06 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,15 @@ char	*ft_put_ptr(unsigned long long ptr)
 	point[count] = '\0';
 	if (ptr >= 16)
 	{
-		ft_put_ptr(ptr / 16);
-		ft_put_ptr(ptr % 16);
-		// printf("point: %s\n", point);
+        ft_put_ptr(ptr / 16);
+        ft_put_ptr(ptr % 16);
 	}
 	else
 	{
 		if (ptr <= 9)
-			point[count - 1] = (ptr + '0');
+			*--point = (ptr + '0');
 		else
-			point[count - 1] = (ptr - 10 + 'a');
-		count--;
+			*--point = (ptr - 10 + 'a');
 	}
 	// printf("point: %s\n", point);
 	return (point);
