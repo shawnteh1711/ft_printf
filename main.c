@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/01/27 20:12:52 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/08 16:02:12 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	// ft_printf("%5p\n", p);
 	// ft_printf("%5%\n", p);
 	// ft_printf("%p\n", p);
-	// ft_printf("%p", NULL);
+	ft_printf("%i", 123);
 	// ft_printf("%p\n", &a12);
 	// printf("%.2p\n", &a12);
 	// ft_printf("%p\n", 0);
@@ -37,10 +37,13 @@ int	main(void)
 	// printf("%.*p\n", -3, 0);
 	// printf("%.*p\n", -1, 0);
 	// ft_printf("%5p\n", 0);
-	// printf("%5p\n", 0);
-	ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
+	// printf("%""5p\n", 0);
+	// printf("%-05%");
+	// ft_printf("%-05%");
+	// ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
 	// printf(" %p %p \n", LONG_MIN, LONG_MAX);
-	ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
+	// printf(" %ld %ld \n", LONG_MIN, LONG_MAX);
+	// ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
 	// printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
 	// printf("%s = %s = %sn", convert(65,8), convert(65,10), convert(65,16));
 	// ft_printf("%10.p\n", 0);

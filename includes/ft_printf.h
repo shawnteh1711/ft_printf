@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/01/27 15:07:37 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/08 09:30:31 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_treat_pointer(t_print *myprintf);
 int		ft_treat_int(t_print *myprintf);
 int		ft_treat_uint(t_print *myprintf);
 int		ft_treat_hexa(t_print *myprintf, const char c);
-int		ft_treat_percent(void);
+int		ft_treat_percent(t_print *myprintf);
 int		ft_printstr(char *str);
 int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);

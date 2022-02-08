@@ -6,11 +6,23 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2021/12/27 16:15:14 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/08 20:29:31 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
+
+// handle int and precision = 0;
+// handle int < 0, precision >= 0 || zero padding == 1
+// ft_itoa
+// handle minus == 1, make function which include
+//	handle int < 0, precision >= 0, put negative in front
+//	handle precision >= 0, handle width
+// handle  precision > 0 && precision < ft_strlen(int)
+//	precision = ft_strlen(i)
+// handle precision >= 0, width -= precision, treat width using width
+// else treat width using ft_strlen(int)
+// handle minus == 0 same as minus =1
 
 int	ft_printstr(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2022/01/27 11:50:21 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/08 08:13:34 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 {
 	while (s[i])
 	{
+		if (s[i] == '0')
+			myprintf->zero = 1;
 		if (ft_isdigit(s[i]))
 		{
 			*myprintf = ft_flag_digit2(s, i, myprintf);
@@ -43,8 +45,6 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 			*myprintf = ft_flag_minus(myprintf);
 		if (s[i] == ' ')
 			myprintf->spacef = 1;
-		if (s[i] == '0')
-			myprintf->zero = 1;
 		if (s[i] == '*')
 			*myprintf = ft_flag_star(myprintf);
 		if (conversion_list(s[i]))
@@ -72,6 +72,6 @@ int	ft_eval_format(t_print *myprintf, const char *s, int i)
 	if (s[i] == 'x' || s[i] == 'X')
 		count = ft_treat_hexa(myprintf, s[i]);
 	if (s[i] == '%')
-		count = ft_treat_percent();
+		count = ft_treat_percent(myprintf);
 	return (count);
 }
