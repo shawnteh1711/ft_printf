@@ -4,7 +4,7 @@ To create a program that mimic the standard **printf** function by following its
 
 
 ### Printf Basic
-[printf](![image](https://user-images.githubusercontent.com/34572151/152892264-76fc781b-d8d0-4225-bdef-de06ce40f450.png))
+![image](https://user-images.githubusercontent.com/34572151/152892264-76fc781b-d8d0-4225-bdef-de06ce40f450.png)
 
 ### Important Notes
 - **format**
