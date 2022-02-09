@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2022/02/08 20:29:31 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/09 19:46:20 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,72 @@ int	ft_printstr(char *str)
 
 int	ft_treat_int(t_print *myprintf)
 {
-	int		len;
 	int		n;
+	int		save_n;
+	int		count;
 	char	*num;
 
-	len = 0;
+	count = 0;
 	n = va_arg(myprintf->arg, int);
+	save_n = n;
+	if (n == 0 && myprintf->precision == 0)
+		return (count += ft_width(myprintf->width, 0, 0));
+	if (n < 0 && (myprintf->precision >= 0 || myprintf->zero == 1))
+	{
+		if (myprintf->zero == 1 && myprintf->precision == -1)
+			ft_treat_left_align("-", 1);
+		n *= -1;
+		myprintf->zero = 1;
+		myprintf->width--;
+		count++;
+	}
 	num = ft_itoa(n);
-	len = ft_printstr(num);
+	count += ft_treat_part_int(save_n, num, myprintf);
 	free(num);
-	return (len);
+	return (count);
+}
+
+int	ft_treat_zero_int(int n, int count, t_print *myprintf)
+{
+	if (n < 0 && (myprintf->precision >= 0 || myprintf->zero == 1))
+	{
+		if (myprintf->zero == 1 && myprintf->precision == -1)
+			ft_treat_left_align("-", 1);
+		n *= -1;
+		myprintf->zero = 1;
+		myprintf->width--;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_treat_part_int(int save_n, char *num, t_print *myprintf)
+{
+	int	count;
+
+	count = 0;
+	if ((size_t)myprintf->precision < ft_strlen(num))
+		myprintf->precision = ft_strlen(num);
+	if (myprintf->minus == 1)
+		count += ft_treat_part_int2(save_n, num, myprintf);
+	if (myprintf->precision >= 0)
+		count += ft_width(myprintf->width, myprintf->precision, 0);
+	else
+		count += ft_width(myprintf->width, ft_strlen(num), myprintf->zero);
+	if (myprintf->minus == 0)
+		count += ft_treat_part_int2(save_n, num, myprintf);
+	return (count);
+}
+
+int	ft_treat_part_int2(int save_n, char *num, t_print *myprintf)
+{
+	int	c;
+
+	c = 0;
+	if (save_n < 0 && myprintf->precision >= 0)
+		ft_putchar('-');
+	if (myprintf->precision >= 0)
+		c += ft_width(myprintf->precision - 1, ft_strlen(num) - 1, 1);
+	c += ft_treat_left_align(num, ft_strlen(num));
+	return (c);
 }

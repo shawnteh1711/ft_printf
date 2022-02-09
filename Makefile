@@ -13,12 +13,11 @@
 NAME		:= libftprintf.a
 CC			:= gcc
 AR			:= ar rcs
-CFLAGS		:= -Wall -Werror -Wextra -c
+CFLAGS		:= -Wall -Werror -Wextra -c -g
 SRCS		= ./libft/ft*.c ./srcs/ft*.c
 OBJS		= ft*.o
 LIBFT		= ./libft
 INC			= ./includes
-
 
 # Colors
 GREEN		= \033[1;32m
@@ -40,7 +39,7 @@ bonus		: re
 
 
 test			: 
-				gcc main.c libft/ft*.c srcs/ft*.c -I ./includes
+				gcc main.c -g libft/ft*.c srcs/ft*.c -I ./includes -o printf
 
 clean			:
 				@echo "$(RED)Cleaning..."
@@ -60,4 +59,4 @@ re		: fclean all
 norm	:
 		@norminette $(SRC) $(INC) $(LIBFT) | grep -v Norme -B1 || true
 
-.PHONY	: clean fclean all re norm
+ test.PHONY	: clean fclean all re norm

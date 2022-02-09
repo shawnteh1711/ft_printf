@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/02/08 16:02:12 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/09 19:36:01 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ int	main(void)
 	// ft_printf("%5p\n", p);
 	// ft_printf("%5%\n", p);
 	// ft_printf("%p\n", p);
-	ft_printf("%i", 123);
+	// ft_printf("%.5i\n", 2);
+	// ft_printf("%i\n", -2);
+	// printf("%i\n", -2);
+	ft_printf("%.6i", -3);
 	// ft_printf("%p\n", &a12);
 	// printf("%.2p\n", &a12);
 	// ft_printf("%p\n", 0);

@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:52:44 by steh              #+#    #+#             */
-/*   Updated: 2022/02/08 15:47:52 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/09 17:49:46 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ char	*ft_put_ptr(unsigned long long ptr, int base)
 	count = 0;
 	point = 0;
 	count = ft_ptr_len(ptr);
-	if (!(point = malloc(sizeof(char) * (count + 1))))
+	point = malloc(sizeof(char) * (count + 1));
+	if (!point)
 		return (0);
 	point[count] = '\0';
 	while (ptr != 0)
@@ -75,7 +76,7 @@ int	ft_treat_pointer(t_print *myprintf)
 {
 	int					count;
 	unsigned long long	pointer;
-	char 				*hex_pointer;
+	char				*hex_pointer;
 
 	count = 0;
 	pointer = va_arg(myprintf->arg, unsigned long long);
@@ -84,7 +85,6 @@ int	ft_treat_pointer(t_print *myprintf)
 		count += ft_width(myprintf->width - 3, 0, 0);
 		return (count += ft_treat_left_align("0x0", 3));
 	}
-	// hex_pointer = convert_base(pointer, 16);
 	hex_pointer = ft_put_ptr(pointer, 16);
 	hex_pointer = ft_pointer_tolower(hex_pointer);
 	if ((size_t)myprintf->precision < ft_strlen(hex_pointer))

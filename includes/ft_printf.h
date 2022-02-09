@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/02/08 09:30:31 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/09 19:47:17 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ char	*ft_pointer_tolower(char *point);
 int		ft_treat_part_pointer(char *point, t_print *myprintf);
 char	*convert_base(unsigned long long num, int base);
 int		ft_ptr_len(unsigned long long ptr);
+int		ft_treat_part_int(int save_n, char *num, t_print *myprintf);
+int		ft_treat_part_int2(int n, char *num, t_print *myprintf);
+
 
 
 
