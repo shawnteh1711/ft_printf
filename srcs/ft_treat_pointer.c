@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:52:44 by steh              #+#    #+#             */
-/*   Updated: 2022/02/09 17:49:46 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/11 20:10:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,25 +98,6 @@ int	ft_treat_pointer(t_print *myprintf)
 	return (count);
 }
 
-// int	ft_treat_pointer(t_print *myprintf)
-// {
-// 	int					count;
-// 	unsigned long long	pointer;
-// 	char				*point;
-
-// 	count = 0;
-// 	count += write(1, "0x", 2);
-// 	pointer = va_arg(myprintf->arg, unsigned long long);
-// 	if (pointer == 0)
-// 		count += write(1, "0", 1);
-// 	else
-// 	{
-// 		ft_put_ptr(pointer);
-// 		count += ft_ptr_len(pointer);
-// 	}
-// 	return (count);
-// }
-
 char	*ft_pointer_tolower(char *hex_pointer)
 {
 	int	i;
@@ -145,3 +126,22 @@ int	ft_treat_part_pointer(char *hex_pointer, t_print *myprintf)
 		c += ft_treat_left_align(hex_pointer, ft_strlen(hex_pointer));
 	return (c);
 }
+
+// int	ft_treat_pointer(t_print *myprintf)
+// {
+// 	int					count;
+// 	unsigned long long	pointer;
+// 	char				*point;
+
+// 	count = 0;
+// 	count += write(1, "0x", 2);
+// 	pointer = va_arg(myprintf->arg, unsigned long long);
+// 	if (pointer == 0)
+// 		count += write(1, "0", 1);
+// 	else
+// 	{
+// 		ft_put_ptr(pointer);
+// 		count += ft_ptr_len(pointer);
+// 	}
+// 	return (count);
+// }

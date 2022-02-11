@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2022/02/09 19:46:20 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/09 19:50:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,6 @@ int	ft_treat_int(t_print *myprintf)
 	num = ft_itoa(n);
 	count += ft_treat_part_int(save_n, num, myprintf);
 	free(num);
-	return (count);
-}
-
-int	ft_treat_zero_int(int n, int count, t_print *myprintf)
-{
-	if (n < 0 && (myprintf->precision >= 0 || myprintf->zero == 1))
-	{
-		if (myprintf->zero == 1 && myprintf->precision == -1)
-			ft_treat_left_align("-", 1);
-		n *= -1;
-		myprintf->zero = 1;
-		myprintf->width--;
-		count++;
-	}
 	return (count);
 }
 

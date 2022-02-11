@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 17:01:05 by steh              #+#    #+#             */
-/*   Updated: 2022/02/08 08:13:34 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/11 19:01:35 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int	ft_flag_parse(t_print *myprintf, const char *s, int i)
 		}
 		if (s[i] == '-')
 			*myprintf = ft_flag_minus(myprintf);
-		if (s[i] == ' ')
-			myprintf->spacef = 1;
 		if (s[i] == '*')
 			*myprintf = ft_flag_star(myprintf);
+		if (s[i] == ' ')
+			ft_putchar_fd(s[i], 1);
 		if (conversion_list(s[i]))
 			break ;
 		i++;

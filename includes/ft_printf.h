@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/02/09 19:47:17 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/11 19:56:18 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		ft_treat_uint(t_print *myprintf);
 int		ft_treat_hexa(t_print *myprintf, const char c);
 int		ft_treat_percent(t_print *myprintf);
 int		ft_printstr(char *str);
-int		ft_uitoa(unsigned int n);
 void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
 int		ft_width(int width, int minus, int zero);
@@ -67,8 +66,12 @@ char	*convert_base(unsigned long long num, int base);
 int		ft_ptr_len(unsigned long long ptr);
 int		ft_treat_part_int(int save_n, char *num, t_print *myprintf);
 int		ft_treat_part_int2(int n, char *num, t_print *myprintf);
-
-
-
+char	*ft_uitoa(unsigned int n);
+size_t	ft_len(long long num, int base);
+int		ft_treat_part_uint(char *u_int, t_print *myprintf);
+int		ft_treat_part_uint2(char *u_int, t_print *myprintf);
+char	*ft_put_ptr(unsigned long long ptr, int base);
+int		ft_treat_part_hexa(char *hexa, t_print *myprintf);
+int		ft_treat_part_hexa2(char *hexa, t_print *myprintf);
 
 #endif
