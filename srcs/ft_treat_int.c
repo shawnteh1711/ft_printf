@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2022/02/09 19:50:52 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/15 20:05:41 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	ft_treat_part_int(int save_n, char *num, t_print *myprintf)
 	count = 0;
 	if ((size_t)myprintf->precision < ft_strlen(num))
 		myprintf->precision = ft_strlen(num);
-	if (myprintf->minus == 1)
+	if (myprintf->minus == 1)	
 		count += ft_treat_part_int2(save_n, num, myprintf);
 	if (myprintf->precision >= 0)
 		count += ft_width(myprintf->width, myprintf->precision, 0);

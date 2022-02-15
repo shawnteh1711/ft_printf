@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/02/11 20:16:00 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/15 19:51:29 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,25 @@ int	main(void)
 	// ft_printf("%i\n", -2);
 	// printf("%i\n", -2);
 	// ft_printf("%.6i", -3);
-	ft_printf("%3x", 0);
+	// ft_printf("%3x", 0);
+	// ft_printf("this %x number", 0);
+	// printf("%0*i", -7, -54);
+	// printf("%.*o", -3, 12345);
+	// printf("%.*o", -1, 12345);
+	// printf("%.*o", -1, 0);
+	// ft_printf(" %x\n", 0);
+	// printf(" %x\n", 0);
+	// ft_printf(" %d\n", -42);
+	ft_printf(" %010d\n", INT_MIN);
+	printf(" %010d\n", INT_MIN);
+	ft_printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf(" %x\n", LONG_MIN);
+	// printf(" %x\n", LONG_MIN);
+	// ft_printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	// printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%\n", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 	// ft_printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
 	// printf("%% *.5i 42 == |% *.5i|\n", 4, 42);
 	// ft_printf("%p\n", &a12);

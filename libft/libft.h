@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:22:18 by steh              #+#    #+#             */
-/*   Updated: 2022/02/11 18:06:42 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/15 12:53:29 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 # define MAX_LONG 9223372036854775807
-# define LONG_MIN -9223372036854775808
-# define LONG_MAX 9223372036854775807
+# define LONG_MIN -2147483648
+# define LONG_MAX 2147483647
 # define ULONG_MAX 18446744073709551615
 
 typedef struct s_list
