@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/02/15 19:51:29 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:37:17 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,21 @@ int	main(void)
 	// ft_printf(" %x\n", 0);
 	// printf(" %x\n", 0);
 	// ft_printf(" %d\n", -42);
-	ft_printf(" %010d\n", INT_MIN);
-	printf(" %010d\n", INT_MIN);
-	ft_printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf("%0*i\n", -7, -54);
+	printf("%0*i\n", -7, -54);
+	// ft_printf(" %010d\n", INT_MIN);
+	// printf(" %010d\n", INT_MIN);
+	// printf("Minimum value of long int %ld\n", LONG_MIN);
+	// ft_printf(" %012d \n", LONG_MIN);
+	// printf(" %012d \n", LONG_MIN);
+	// ft_printf(" %011i \n", INT_MIN);
+	// printf(" %011i \n", INT_MIN);
+	// ft_printf(" %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf(" %09i %010i %011i %012i %013i %014i %015i\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// printf(" %09d %010d %011d %012d %013d %014d %015d\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf("%014d %015d\n", 0, -42);
+	// printf("%014d %015d\n", 0, -42);
 	// ft_printf(" %x\n", LONG_MIN);
 	// printf(" %x\n", LONG_MIN);
 	// ft_printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);

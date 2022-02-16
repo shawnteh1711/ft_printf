@@ -26,6 +26,7 @@ RED			= \033[1;31m
 
 all			: $(NAME)
 
+
 $(NAME)		: $(OBJS) 
 				@make re -C $(LIBFT)
 				@$(AR) $(NAME) $(OBJS)
@@ -35,7 +36,7 @@ $(NAME)		: $(OBJS)
 $(OBJS)		:
 				@$(CC) $(CFLAGS) $(SRCS) -I $(INC)
 
-bonus		: re
+bonus		: all
 
 
 test			: 

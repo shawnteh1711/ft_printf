@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 13:22:18 by steh              #+#    #+#             */
-/*   Updated: 2022/02/15 12:53:29 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:13:12 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-// # include <limits.h>
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-# define MAX_LONG 9223372036854775807
-# define LONG_MIN -2147483648
-# define LONG_MAX 2147483647
-# define ULONG_MAX 18446744073709551615
+# include <limits.h>
+// # define INT_MIN -2147483648
+// # define INT_MAX 2147483647
+// # define MAX_LONG 9223372036854775807
+// # define LONG_MIN -9223372036854775808
+// # define LONG_MAX 9223372036854775807
+// # define ULONG_MAX 18446744073709551615
 
 typedef struct s_list
 {
@@ -57,7 +57,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-char	*ft_itoa(int n);
+char	*ft_itoa(long n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 void	ft_putchar_fd(char c, int fd);

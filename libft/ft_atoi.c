@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: steh <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:21:58 by steh              #+#    #+#             */
-/*   Updated: 2021/12/02 12:47:50 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:04:28 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_atoi(const char *str)
 		sum = sum * 10 + (*str - '0');
 		str++;
 	}
-	if (sign == 1 && sum > MAX_LONG)
+	if (sign == 1 && sum > LONG_MAX)
 		return (-1);
-	if (sign == -1 && sum > MAX_LONG)
+	if (sign == -1 && sum > LONG_MAX)
 		return (0);
 	return (sum * sign);
 }

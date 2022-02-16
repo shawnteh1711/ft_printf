@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 10:22:08 by steh              #+#    #+#             */
-/*   Updated: 2022/01/27 12:02:50 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:30:55 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ t_print	ft_flag_star(t_print *myprintf)
 	{
 		myprintf->minus = 1;
 		myprintf->width *= -1;
+		myprintf->zero = 0;
 	}
 	return (*myprintf);
 }

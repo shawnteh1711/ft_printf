@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:53:32 by steh              #+#    #+#             */
-/*   Updated: 2022/02/15 20:05:41 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:37:32 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	ft_printstr(char *str)
 
 int	ft_treat_int(t_print *myprintf)
 {
-	int		n;
-	int		save_n;
-	int		count;
-	char	*num;
+	long		n;
+	long		save_n;
+	int			count;
+	char		*num;
 
 	count = 0;
 	n = va_arg(myprintf->arg, int);
@@ -53,7 +53,8 @@ int	ft_treat_int(t_print *myprintf)
 		return (count += ft_width(myprintf->width, 0, 0));
 	if (n < 0 && (myprintf->precision >= 0 || myprintf->zero == 1))
 	{
-		if (myprintf->zero == 1 && myprintf->precision == -1)
+		if (myprintf->zero == 1 && myprintf->precision == -1
+			&& (n > INT_MIN || n > LONG_MIN))
 			ft_treat_left_align("-", 1);
 		n *= -1;
 		myprintf->zero = 1;
@@ -73,7 +74,7 @@ int	ft_treat_part_int(int save_n, char *num, t_print *myprintf)
 	count = 0;
 	if ((size_t)myprintf->precision < ft_strlen(num))
 		myprintf->precision = ft_strlen(num);
-	if (myprintf->minus == 1)	
+	if (myprintf->minus == 1)
 		count += ft_treat_part_int2(save_n, num, myprintf);
 	if (myprintf->precision >= 0)
 		count += ft_width(myprintf->width, myprintf->precision, 0);

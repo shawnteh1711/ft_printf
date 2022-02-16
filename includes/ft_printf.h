@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/02/11 19:56:18 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 15:00:13 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct s_print
 	int		minus;
 	int		t_len;
 	int		sign;
-	int		is_zero;
 	int		star;
 	int		spacef;
 	const char	*end;

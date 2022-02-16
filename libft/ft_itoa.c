@@ -6,13 +6,13 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 14:37:00 by steh              #+#    #+#             */
-/*   Updated: 2022/02/15 19:40:51 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 16:12:57 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_len(int n)
+size_t	get_len(long n)
 {
 	size_t	len;
 
@@ -29,7 +29,7 @@ size_t	get_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	int		len;
 	char	*str;
