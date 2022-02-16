@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:00:16 by steh              #+#    #+#             */
-/*   Updated: 2022/02/16 15:00:13 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/16 17:50:52 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 
 typedef struct s_print
 {
-	va_list	arg;
-	int		width;
-	int		precision;
-	int		zero;
-	int		point;
-	int		minus;
-	int		t_len;
-	int		sign;
-	int		star;
-	int		spacef;
+	va_list		arg;
+	int			width;
+	int			precision;
+	int			zero;
+	int			point;
+	int			minus;
+	int			t_len;
+	int			sign;
+	int			star;
+	int			spacef;
 	const char	*end;
 }	t_print;
 
@@ -49,7 +49,7 @@ void	ft_put_hex(unsigned int n, const char c);
 int		ft_hex_len(unsigned int n);
 int		ft_width(int width, int minus, int zero);
 t_print	ft_flag_minus(t_print *myprintf);
-t_print ft_flag_digit(char c, t_print *myprintf);
+t_print	ft_flag_digit(char c, t_print *myprintf);
 int		conversion_list(int c);
 int		flag_list(int c);
 long	ft_strltol(const char *p, const char **end, int base);
