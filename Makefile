@@ -29,6 +29,12 @@ bonus		: all
 
 test			: 
 				gcc main.c -g libft/ft*.c srcs/ft*.c -I ./includes -o printf
+				./printf
+
+
+test2			:
+				gcc main.c -g libftprintf.a -o printf
+				./printf
 
 clean			:
 				@echo "$(RED)Cleaning..."

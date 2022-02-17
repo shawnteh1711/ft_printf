@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/02/16 16:37:17 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/17 21:00:26 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,18 @@ int	main(void)
 	// ft_printf(" %x\n", 0);
 	// printf(" %x\n", 0);
 	// ft_printf(" %d\n", -42);
-	ft_printf("%0*i\n", -7, -54);
-	printf("%0*i\n", -7, -54);
+	// ft_printf("|%x|\n",12);
+	ft_printf("|%x|\n", LONG_MIN);
+	printf("|%x|\n", LONG_MIN);
+	ft_printf(" %x \n", ULONG_MAX);
+	printf(" %x \n", ULONG_MAX);
+	ft_printf(" %x \n", 9223372036854775807LL);
+	printf(" %x \n", 9223372036854775807LL);
+	ft_printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf("|%p|\n",p);
+	// ft_printf("|%p|\n",p);
+	// printf("|%p|\n", p);
 	// ft_printf(" %010d\n", INT_MIN);
 	// printf(" %010d\n", INT_MIN);
 	// printf("Minimum value of long int %ld\n", LONG_MIN);
@@ -127,5 +137,6 @@ int	main(void)
 	// ft_printf("%u\n", -26);
 	// ft_printf("%x\n", 23123);
 	// ft_printf("%X\n", 23423);
+	system("leaks printf");
 	return (0);
 }
