@@ -15,3 +15,4 @@ To create a program that mimic the standard **printf** function by following its
 #### Reference
 1. [markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 2. [printf notes](https://docs.google.com/document/d/1znc7N5ua3WC1PhGcirRhtadHYSrPK3wxTApMdlJXYes/edit?pli=1#)
+3. [printf code](https://github.com/rchallie/ft_printf)
