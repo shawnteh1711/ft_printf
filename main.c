@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:43:20 by steh              #+#    #+#             */
-/*   Updated: 2022/02/17 21:00:26 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/17 21:15:27 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,6 @@ int	main(void)
 	// ft_printf("%u\n", -26);
 	// ft_printf("%x\n", 23123);
 	// ft_printf("%X\n", 23423);
-	system("leaks printf");
+	// system("leaks printf");
 	return (0);
 }

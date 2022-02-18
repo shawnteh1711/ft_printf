@@ -6,7 +6,7 @@
 /*   By: steh <steh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 07:50:39 by steh              #+#    #+#             */
-/*   Updated: 2022/02/15 13:32:41 by steh             ###   ########.fr       */
+/*   Updated: 2022/02/18 16:13:53 by steh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_treat_hexa(t_print *myprintf, const char c)
 	hexa = ft_put_ptr(n, 16);
 	if (c == 'x')
 		hexa = ft_pointer_tolower(hexa);
-	free(hexa);
 	count += ft_treat_part_hexa(hexa, myprintf);
+	free(hexa);
 	return (count);
 }
 
