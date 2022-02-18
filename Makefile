@@ -54,4 +54,4 @@ re		: fclean all
 norm	:
 		@norminette $(SRC) $(INC) $(LIBFT) | grep -v Norme -B1 || true
 
- test.PHONY	: clean fclean all re norm
+PHONY	: clean fclean all re norm
